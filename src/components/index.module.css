@@ -30,7 +30,7 @@
 }
 
 .listItem:nth-child(4)::marker {
-  color: #663399;
+  color: #e95800;
 }
 
 .listItemLink {
@@ -50,5 +50,44 @@
 
 .intro {
   max-width: none;
-  line-height: var(--line-height-loose);
+  font-size: 1.5rem;
+}
+
+.verticalLine {
+  width: 1px;
+  background-color: #ccc;
+  margin: 0 20px;
+  margin-bottom: -2rem;
+  @media (max-width: 1464px) {
+    visibility: hidden;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sectionContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  h2 {
+    align-self: center;
+  }
+  p {
+    align-self: center;
+    width: 75%;
+    font-size: 0.85rem;
+  }
+  @media (max-width: 1464px) {
+    margin-top: 15px;
+  }
+}
+
+.sectionButtons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }

@@ -8,7 +8,6 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -24,7 +23,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
           margin: `0 auto`,
@@ -39,9 +37,11 @@ const Layout = ({ children }) => {
             fontSize: `var(--font-sm)`,
           }}
         >
-          © {new Date().getFullYear()} &middot; Built with
+          © {new Date().getFullYear()} &middot; Questions or concerns? Email us:
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <a href="mailto:summitbandtreasurer@gmail.com">
+            Summit Band Treasurer
+          </a>
         </footer>
       </div>
     </>

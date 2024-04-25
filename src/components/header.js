@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link, Script } from "gatsby"
 
 const Header = ({ siteTitle }) => (
   <header
@@ -11,6 +11,7 @@ const Header = ({ siteTitle }) => (
       justifyContent: `space-between`,
     }}
   >
+    <Script async src="https://js.stripe.com/v3/buy-button.js"></Script>
     <Link
       to="/"
       style={{

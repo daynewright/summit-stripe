@@ -1,128 +1,80 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { Script } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import StripeButton from "../components/stripeButton"
+
 import * as styles from "../components/index.module.css"
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
-
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
-
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
-
-const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
-)
+const IndexPage = () => {
+  return (
+    <Layout>
+      <Script async src="https://js.stripe.com/v3/buy-button.js"></Script>
+      <div className={styles.textCenter}>
+        <StaticImage
+          src="../images/logo.png"
+          loading="eager"
+          width={105}
+          quality={95}
+          formats={["auto", "webp", "avif"]}
+          alt=""
+          style={{ marginBottom: `var(--space-3)` }}
+        />
+        <h1>
+          Welcome to the <b>Summit Band!</b>
+        </h1>
+        <p className={styles.intro}>
+          <br />
+          You can pay for your child's program and meal plan here! 🎉
+        </p>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "15px",
+          }}
+        >
+          <p></p>
+        </div>
+      </div>
+      <div className={styles.container}>
+        <div className={styles.sectionContainer}>
+          <h2>Options for Student Band Program 🎺</h2>
+          <p>
+            This is a monthly payment until the total of <b>$750</b> is reached.
+            If you have multiple children in band, you will need to set up a
+            payment for each child separately.
+          </p>
+          <div className={styles.sectionButtons}>
+            <StripeButton buttonId="buy_btn_1P9ItWHaK9Zw5GBQ2LWrXUR2" />
+            <StripeButton buttonId="buy_btn_1P9Qn9HaK9Zw5GBQmwl1KbQ7" />
+          </div>
+        </div>
+        <div className={styles.verticalLine} />
+        <div className={styles.sectionContainer}>
+          <h2>Options for Student Meal Plan 🍽️</h2>
+          <p>
+            This is a one time payment for the meal plan. If you have multiple
+            children in band, you will need to set up a payment for each child
+            separately.
+          </p>
+          <div className={styles.sectionButtons}>
+            <StripeButton buttonId="buy_btn_1P9UgSHaK9Zw5GBQaQebGHbU" />
+            <StripeButton buttonId="buy_btn_1P9UfVHaK9Zw5GBQvopwgNrK" />
+          </div>
+        </div>
+      </div>
+    </Layout>
+  )
+}
 
 /**
  * Head export to define metadata for the page
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Home" />
+export const Head = () => <Seo title="Summit Band Donation" />
 
 export default IndexPage

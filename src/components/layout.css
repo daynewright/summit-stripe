@@ -1,7 +1,7 @@
 :root {
   --border-radius: 4px;
   --color-text: #333;
-  --color-primary: #7026b9;
+  --color-primary: #e95800;
   --color-code-bg: #fff4db;
   --color-code: #8a6534;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
@@ -21,7 +21,7 @@
   --space-4: 24px;
   --space-5: 32px;
   --space-6: 64px;
-  --size-content: 54rem;
+  --size-content: "100%";
   --size-gutter: var(--space-5);
   --size-gap: var(--space-6);
 }
@@ -72,7 +72,6 @@ dfn {
 }
 h1 {
   margin: 0;
-  margin-bottom: 3rem;
   padding: 0;
   line-height: var(--line-height-dense);
   letter-spacing: -0.01em;
