@@ -73,14 +73,16 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  h2 {
+  h1 {
     align-self: center;
+    margin: 20px;
   }
   p {
     align-self: center;
     width: 75%;
     font-size: 0.85rem;
   }
+
   @media (max-width: 1464px) {
     margin-top: 15px;
   }
@@ -96,10 +98,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 20px 0;
 }
 
 .stripeButtonHeader {
   margin: 0;
   color: #e95800;
   font-style: italic;
+}
+
+.dueDate {
+  margin: 10px auto;
+  color: #e95800;
 }

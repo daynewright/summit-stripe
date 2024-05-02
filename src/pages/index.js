@@ -41,33 +41,45 @@ const IndexPage = () => {
       </div>
       <div className={styles.container}>
         <div className={styles.sectionContainer}>
-          <h2>Options for Student Band Program 🎺</h2>
+          <h1>Options for Student Band Program 🎺</h1>
           <p>
-            This is a monthly payment until the total of <b>$750</b> is reached.
+            This is a monthly payment until the total of <b>$780</b> is reached.
             If you have multiple children in band, you will need to set up a
             payment for each child separately.
           </p>
           <div className={styles.sectionButtons}>
-            <StripeButton buttonId="buy_btn_1P9ItWHaK9Zw5GBQ2LWrXUR2" />
-            <StripeButton buttonId="buy_btn_1P9Qn9HaK9Zw5GBQmwl1KbQ7" />
+            <StripeButton
+              buttonId="buy_btn_1PC94cHaK9Zw5GBQGMbehrB6"
+              headerText="Pay in full!"
+            />
+            <StripeButton
+              buttonId="buy_btn_1PC952HaK9Zw5GBQ1QuFA7eA"
+              headerText="$260 monthly for 3 months."
+            />
+            <StripeButton
+              buttonId="buy_btn_1PC95XHaK9Zw5GBQ6RAzS4we"
+              headerText="$130 monthly for 6 months."
+            />
           </div>
         </div>
-        <div className={styles.verticalLine} />
         <div className={styles.sectionContainer}>
-          <h2>Options for Student Meal Plan 🍽️</h2>
+          <h1>Options for Student Meal Plan 🍽️</h1>
+          <h3 className={styles.dueDate}>
+            <b>*DUE by Friday, June 28th*</b>
+          </h3>
           <p>
-            This is a one time payment for the meal plan. If you have multiple
-            children in band, you will need to set up a payment for each child
-            separately.
+            This will cover the meal plan for the band season and band camp. The
+            total cost is <b>$260</b> and can be paid over two months or in one
+            single payment.
           </p>
           <div className={styles.sectionButtons}>
             <StripeButton
-              buttonId="buy_btn_1P9UgSHaK9Zw5GBQaQebGHbU"
-              headerText="*DUE by Friday, June 28th*"
+              buttonId="buy_btn_1PC9AVHaK9Zw5GBQgCQDJJ6c"
+              headerText="Pay in full"
             />
             <StripeButton
-              buttonId="buy_btn_1P9UfVHaK9Zw5GBQvopwgNrK"
-              headerText="*DUE by Friday, July 26th*"
+              buttonId="buy_btn_1PC9BNHaK9Zw5GBQCwMqcij5"
+              headerText="$130 monthly for 2 months."
             />
           </div>
         </div>
