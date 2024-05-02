@@ -61,8 +61,14 @@ const IndexPage = () => {
             separately.
           </p>
           <div className={styles.sectionButtons}>
-            <StripeButton buttonId="buy_btn_1P9UgSHaK9Zw5GBQaQebGHbU" />
-            <StripeButton buttonId="buy_btn_1P9UfVHaK9Zw5GBQvopwgNrK" />
+            <StripeButton
+              buttonId="buy_btn_1P9UgSHaK9Zw5GBQaQebGHbU"
+              headerText="*DUE by Friday, June 28th*"
+            />
+            <StripeButton
+              buttonId="buy_btn_1P9UfVHaK9Zw5GBQvopwgNrK"
+              headerText="*DUE by Friday, July 26th*"
+            />
           </div>
         </div>
       </div>

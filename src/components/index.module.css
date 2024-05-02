@@ -91,3 +91,15 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.stripeButtonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stripeButtonHeader {
+  margin: 0;
+  color: #e95800;
+  font-style: italic;
+}

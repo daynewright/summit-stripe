@@ -1,16 +1,21 @@
 import * as React from "react"
 
-const StripeButton = ({ buttonId }) => {
+import * as styles from "../components/index.module.css"
+
+const StripeButton = ({ buttonId, headerText }) => {
   return (
-    <stripe-buy-button
-      style={{
-        margin: "10px 20px",
-        border: ".5px solid grey",
-        borderRadius: "5px",
-      }}
-      buy-button-id={buttonId}
-      publishable-key={process.env.STRIPE_PUBLISHABLE_KEY}
-    />
+    <div className={styles.stripeButtonContainer}>
+      <h3 className={styles.stripeButtonHeader}>{headerText ?? "  "}</h3>
+      <stripe-buy-button
+        style={{
+          margin: "10px 20px",
+          border: ".5px solid grey",
+          borderRadius: "5px",
+        }}
+        buy-button-id={buttonId}
+        publishable-key={process.env.STRIPE_PUBLISHABLE_KEY}
+      />
+    </div>
   )
 }
 
