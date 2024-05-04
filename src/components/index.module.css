@@ -75,7 +75,11 @@
   flex-direction: column;
   h1 {
     align-self: center;
-    margin: 20px;
+    margin-top: 25px;
+    margin-bottom: 35px;
+    @media (max-width: 1464px) {
+      font-size: 1.75rem;
+    }
   }
   p {
     align-self: center;
