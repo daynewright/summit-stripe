@@ -51,9 +51,9 @@ const IndexPage = () => {
         <div className={styles.sectionContainer}>
           <h1>{isDesktop && "Options for"} Student Band Program 🎺</h1>
           <p>
-            This is a monthly payment until the total of <b>$775</b> is reached.
-            If you have multiple children in band, you will need to set up a
-            payment for each child separately.
+            The total band season donation is <b>$775</b> per student paid in a
+            single payment or <b>$780</b> total if paid monthly. (Processing
+            fees are included)
           </p>
           <div className={styles.sectionButtons}>
             <StripeButton
@@ -79,7 +79,7 @@ const IndexPage = () => {
           <p>
             This will cover the meal plan for the band season and band camp. The
             total cost is <b>$260</b> and can be paid over two months or in one
-            single payment.
+            single payment. (Processing fees are included)
           </p>
           <div className={styles.sectionButtons}>
             <StripeButton
