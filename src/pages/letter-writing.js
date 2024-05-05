@@ -23,12 +23,11 @@ const IndexPage = () => {
           style={{ marginBottom: `var(--space-3)` }}
         />
         <h1>
-          Welcome to the <b>Summit Band!</b>
+          <b>Summit Band</b> Donation Options
         </h1>
         <p className={styles.intro}>
           <br />
-          Thank you for your willingness to donate to the band to help us have
-          an amazing season! 🎉
+          Thank you for your willingness to donate this season! 🎉
         </p>
         <div
           style={{
@@ -42,11 +41,10 @@ const IndexPage = () => {
       </div>
       <div className={styles.container}>
         <div className={styles.sectionContainer}>
-          <h1>Donation Options</h1>
           <p>
             Thank you for responding to our letter writing campaign! You can use
             one of the options below to donate a single amount, monthly or
-            quartly amount.
+            quarterly amount.
           </p>
           <div className={styles.sectionButtons}>
             <StripeButton
